@@ -1,0 +1,58 @@
+body {
+  background-size: 100%;
+  background-image: url(image.png);
+  object-fit: fill;
+  height: 100vh;
+  display: flex;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+}
+.Main-header {
+  height: 50%;
+  width: 50%;
+  background-color: rgba(242, 250, 214, 0.849);
+  border-radius: 10px;
+  box-shadow: 20px 20px rgba(0, 0, 0, 0.568);
+}
+.input {
+  height: 30px;
+  border-radius: 10px;
+  box-shadow: 5px 8px;
+  outline: none;
+}
+.inputboxes {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.submitDiv {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+.heading {
+  display: flex;
+  justify-content: center;
+}
+.submit {
+  background-color: royalblue;
+  position: relative;
+  height: 35px;
+  width: 100px;
+  border-radius: 10px;
+  transform: translate(-5px, -10px);
+  transition: 0.3s ease-in-out;
+  z-index: 30;
+}
+.buttonbg {
+  height: 35px;
+  width: 100px;
+  position: absolute;
+  border-radius: 10px;
+  background-color: black;
+}
+.submit:hover {
+  transform: translate(0px, 0px);
+}

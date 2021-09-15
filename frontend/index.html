@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="index.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>റേഷൻ കട</title>
+  </head>
+  <body>
+    <div class="Main-header">
+      <!-- ------------------------Login----------------------------- -->
+      <div class="inputboxes">
+        <div>
+          <div class="heading">
+            <h2>റേഷൻ കട</h2>
+          </div>
+          <div class="login">
+            <input id="username" type="text" class="username input" />
+            <input id="password" type="password" class="password input" />
+          </div>
+          <div class="submitDiv">
+            <div class="buttonbg"></div>
+            <button class="submit" type="submit" id="Submit">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    document.getElementById("Submit").onclick = function () {
+      var userName = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      console.log(userName);
+      console.log(password);
+      if (userName == "Naveen" && password == "KL44a8236@.")
+        location.href = "https://www.youtube.com";
+    };
+  </script>
+</html>
