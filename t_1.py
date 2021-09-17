@@ -1,8 +1,6 @@
 import socket
 import sys
 
-users =[{"kurian":"abcd"},{"nino":"1234"},{"naveen":"qwerty"}]
-
 clientlist=[{"kurian":"availabe is rice:2kg,wheat:5kg"},
 {"nino":"availabe is rice:2kg,wheat:5kg"},{'naveen':"availabe is rice:2kg,wheat:5kg"}]
 
@@ -21,7 +19,9 @@ while True:
     #     clientlist.append(conn)
     #     print("Authenticated  ",addr)
     #     conn.send(str("Authentication Successfull").encode())
-    conn.send(str(clientlist[username]).encode())    
+    print(username,"+",password)
+    print(clientlist[str(username)])
+    conn.send(str(clientlist[str(username)]).encode())    
         
     # else:
     #     conn.send(str("failed").encode())           	    
