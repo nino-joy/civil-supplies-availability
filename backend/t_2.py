@@ -16,12 +16,12 @@ print(status)
 def send():
     while True:
         
-    sock.close()
+        sock.close()
     
 def receive():
     while True:
           
-    sock.close()
+        sock.close()
   
 t1 = Thread(target =  send)
 t2 = Thread(target = receive)
