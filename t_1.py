@@ -2,7 +2,9 @@ import socket
 import sys
 
 users =[{"kurian":"abcd"},{"nino":"1234"},{"naveen":"qwerty"}]
-clientlist=[]
+
+clientlist=[{"kurian":"availabe is rice:2kg,wheat:5kg"},
+{"nino":"availabe is rice:2kg,wheat:5kg"},{'naveen':"availabe is rice:2kg,wheat:5kg"}]
 
 s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 print ("Socket successfully created")
@@ -15,14 +17,14 @@ while True:
     print(str(addr) + "connection requested\n")
     username = str(conn.recv(1235).decode())
     password = str(conn.recv(1235).decode())
-    if {username:password} in users :
-        clientlist.append(conn)
-        print("Authenticated  ",addr)
-        conn.send(str("Authentication Successfull").encode())
+    # if {username:password} in users :
+    #     clientlist.append(conn)
+    #     print("Authenticated  ",addr)
+    #     conn.send(str("Authentication Successfull").encode())
+    conn.send(str(clientlist[username]).encode())    
         
-        
-    else:
-        conn.send(str("failed").encode())           	    
+    # else:
+    #     conn.send(str("failed").encode())           	    
 s.close()
     	
 

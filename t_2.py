@@ -7,6 +7,7 @@ sock.connect(('127.0.1.1',1234))
 sock.send(input("username:").encode())
 sock.send(input("password:").encode())
 status = sock.recv(1235).decode()
+status =status+"naveen"
 if( status== "failed"):
     print("authentication Failed")
     exit()
