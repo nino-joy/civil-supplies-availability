@@ -1,8 +1,7 @@
 import socket
 import sys
 
-clientlist=[{"kurian":"availabe is rice:2kg,wheat:5kg"},
-{"nino":"availabe is rice:2kg,wheat:5kg"},{'naveen':"availabe is rice:2kg,wheat:5kg"}]
+clientlist={"kurian":"availabe is rice:2kg,wheat:5kg","nino":"availabe is rice:2kg,wheat:5kg","naveen":"availabe is rice:2kg,wheat:5kg"}
 
 s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 print ("Socket successfully created")
@@ -20,7 +19,7 @@ while True:
     #     print("Authenticated  ",addr)
     #     conn.send(str("Authentication Successfull").encode())
     print(username,"+",password)
-    print(clientlist[str(username)])
+    # print(clientlist[str(username)])
     conn.send(str(clientlist[str(username)]).encode())    
         
     # else:
