@@ -2,17 +2,90 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Login Page</title>
+    <title>റേഷൻ കട</title>
   </head>
-  <body style="background-color: orange">
-    <form action="/form_login" method="post">
-      <h2></h2>
-      Username:<br />
-      <input type="text" name="username" /><br />
-      Password:<br />
-      <input name="password" /><br /><br />
-      <input type="submit" value="Login" />
-    </form>
+  <body>
+    <div class="Main-header">
+      <div class="heading">
+        <div>
+          <div class="heading">
+            <h2>റേഷൻ കട</h2>
+          </div>
+          <form action="/form_login" method="post">
+            <div class="login">
+              Username:<br />
+              <input type="text" name="username" class="username input" /><br />
+              Password:<br />
+              <input name="password" class="password input" /><br /><br />
+            </div>
+            <div class="submitDiv">
+              <div class="buttonbg"></div>
+              <input class="submit" type="submit" value="Login" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
     <h1>{{info}}</h1>
   </body>
+  <style>
+    body {
+      background-size: 100%;
+      background-image: url("shop.jpg");
+      object-fit: fill;
+      height: 100vh;
+      display: flex;
+      background-repeat: no-repeat;
+      justify-content: center;
+      align-items: center;
+    }
+    .Main-header {
+      height: 50%;
+      width: 50%;
+      background-color: rgba(242, 250, 214, 0.849);
+      border-radius: 10px;
+      box-shadow: 20px 20px rgba(0, 0, 0, 0.568);
+    }
+    .input {
+      height: 30px;
+      border-radius: 10px;
+      box-shadow: 5px 8px;
+      outline: none;
+    }
+    .inputboxes {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .submitDiv {
+      margin-top: 30px;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .heading {
+      display: flex;
+      justify-content: center;
+    }
+    .submit {
+      background-color: royalblue;
+      position: relative;
+      height: 35px;
+      width: 100px;
+      border-radius: 10px;
+      transform: translate(-5px, -10px);
+      transition: 0.3s ease-in-out;
+      z-index: 30;
+    }
+    .buttonbg {
+      height: 35px;
+      width: 100px;
+      position: absolute;
+      border-radius: 10px;
+      background-color: black;
+    }
+    .submit:hover {
+      transform: translate(0px, 0px);
+    }
+  </style>
 </html>

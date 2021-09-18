@@ -4,8 +4,9 @@ import socket
 import sys
 
 app = Flask(__name__)
+app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-database={'naveen':'123','kurian':'123','nino':'asdsf'}
+database={'naveen':'123','kurian':'123','nino':'123'}
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.connect(('127.0.1.1',1234))
 @app.route('/')
@@ -24,7 +25,21 @@ def login():
             return render_template('login.html',info='Invalid Password')
         else:
             value = client(name1,pwd)
+            sock.close()
             return render_template('home.html',name=str(value))
+def client(name1,pwd):
+    print(name1)
+    print(pwd)
+    sock.send(name1.encode())
+    sock.send(pwd.encode())
+    status = sock.recv(1235).decode()
+    print(status)
+    return status
+if __name__ == '__main__':
+    app.debug = True
+    app.run()
+
+
 # def client(name1,pwd):
 #     sock.send(name1.encode())
 #     sock.send(pwd.encode())
@@ -52,15 +67,3 @@ def login():
 #     t1.join()
 #     t2.join()
 #     return status
-def client(name1,pwd):
-    print(name1)
-    print(pwd)
-    sock.send(name1.encode())
-    sock.send(pwd.encode())
-    status = sock.recv(1235).decode()
-    print(status)
-    return status
-if __name__ == '__main__':
-    app.debug = True
-    app.run()
-    
